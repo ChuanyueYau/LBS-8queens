@@ -10,12 +10,12 @@
 # function to detect attack in row and diag
 def row_diag(current_col,substate):
     count = 0
-    for position in substate:
+    for i,position in enumerate(substate):
         # attack in row
         if current_col == position:
             count += 1
         # attack in diagonal
-        if abs(int(position)-int(current_col)) == substate.index(position)+1:
+        if abs(int(position)-int(current_col)) == i+1:
             count += 1
     return count
 
